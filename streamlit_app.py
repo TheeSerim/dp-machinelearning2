@@ -94,7 +94,7 @@ def main():
 #Add what client will see on the APP screen
 if prediction > 1 :
       st.success("Congratulations you are eligible for a loan")
-  else :
+else :
       st.error("Sorry you are not eligible at this moment")
 
 if __name__ == "__main__":
