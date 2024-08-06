@@ -43,19 +43,19 @@ no_of_dep = st.number_input("Enter your number of dependents", min_value=0, max_
 st.write(f"The number of dependents entered is {no_of_dep}")
 
 # Number input for applicant's Residential asset values
-res_assets = st.number_input("Enter your number of dependents", min_value=0, max_value=50000000, value=0)
+res_assets = st.number_input("Enter your residential asset value", min_value=0, max_value=50000000, value=0)
 st.write(f"The residential asset value entered is {res_assets}")
 
 # Number input for applicant's commercial asset values
-com_assets = st.number_input("Enter your number of dependents", min_value=0, max_value=40000000, value=0)
+com_assets = st.number_input("Enter your commercial asset value", min_value=0, max_value=40000000, value=0)
 st.write(f"The commercial asset value entered is {com_assets}")
 
 # Number input for applicant's luxury asset values
-lux_assets = st.number_input("Enter your number of dependents", min_value=0, max_value=50000000, value=0)
+lux_assets = st.number_input("Enter your luxury asset value", min_value=0, max_value=50000000, value=0)
 st.write(f"The luxury asset value entered is {lux_assets}")
 
 # Number input for applicant's bank asset values
-bank_assets = st.number_input("Enter your number of dependents", min_value=0, max_value=50000000, value=0)
+bank_assets = st.number_input("Enter your bank asset value", min_value=0, max_value=50000000, value=0)
 st.write(f"The bank asset value entered is {bank_assets}")
 
 
