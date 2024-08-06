@@ -13,8 +13,8 @@ user_input = st.text_input("Enter your name")
 st.write(f"Hello, {user_input}!")
 
 # Number input for Loan_amount
-Loan Amount = st.number_input("Enter a Loan_amount", min_value=0, max_value=10000000, value=0)
-st.write(f"The number you entered is {Loan Amount}")
+Loan_Amount = st.number_input("Enter a Loan_amount", min_value=0, max_value=10000000, value=0)
+st.write(f"The number you entered is {Loan_Amount}")
 
 # Select box for education
 options = ["Education = Yes", "Education = No"]
