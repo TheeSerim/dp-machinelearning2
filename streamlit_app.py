@@ -1,7 +1,7 @@
 import streamlit as st
 import pickle
 
-model = pickle.load(open('.TheeSerim/dp-machinelearning2/blob/master/model_loan2.pkl', 'rb'))
+model = pickle.load(open('./TheeSerim/dp-machinelearning2/blob/master/model_loan2.pkl', 'rb'))
 #https://github.com/TheeSerim/dp-machinelearning2/blob/master/model_loan2.pkl
 
 
