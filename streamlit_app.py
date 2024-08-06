@@ -37,9 +37,6 @@ st.write(f"Your credit score entered is {Credit_score}")
 annual_income = st.number_input("Enter your annual income", min_value=0, max_value=10000000, value=0)
 st.write(f"Your annual income entered is {annual_income}")
 
-# Number input for applicant's loan term
-#loan_term = st.number_input("Enter your loan term", min_value=2, max_value=20, value=2)
-#st.write(f"The duration of your loan entered is {loan_term}")
 
 # Selectbox for loan term
 loan_term_options = list(range(2, 21, 2))
@@ -69,17 +66,17 @@ st.write(f"The bank asset value entered is {bank_assets}")
 
 #Create a DataFrame for user inputs
 user_data = pd.DataFrame({
-  "No_of_dependents": [no_of_dependents],
-  "Education":[education],
-  "Self_Employed": [self_employed],
-  "Annual_income" : [income_annum],
-  "Loan_amount" : [loan_amount],
-  "Loan_Duration" : [loan_term],
-  "Credit_Score" : [cibil_score],
-  "Residential_Assets" : [residential_assets_value],
-  "Commercial_Assets" : [commercial_assets_value],
-  "Luxury_Asset" : [luxury_assets_value],
-  "Bank_Assets" : [bank_asset_value]
+  "no_of_dep": [no_of_dependents],
+  "edu_options":[education],
+  "emp_options": [self_employed],
+  "annual_income" : [income_annum],
+  "Loan_Amount" : [loan_amount],
+  "loan_term" : [loan_term],
+  "Credit_score" : [cibil_score],
+  "res_assets" : [residential_assets_value],
+  "com_assets" : [commercial_assets_value],
+  "lux_assets" : [luxury_assets_value],
+  "bank_assets" : [bank_asset_value]
 })
 
 #Need to convert the categorica variables for self_employment and education to numerical values so that the model is able to comupute them
