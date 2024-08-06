@@ -1,7 +1,7 @@
 import streamlit as st
 import pickle
 
-#model = pickle.load(open('./master/model_loan2.pkl', 'rb'))
+model = pickle.load(open('./master/model_loan2.pkl', 'rb'))
 #https://github.com/TheeSerim/dp-machinelearning2/blob/master/model_loan2.pkl
 
 st.title('🎈 Loan Application App')
@@ -64,4 +64,40 @@ bank_assets = st.number_input("Enter your bank asset value", min_value=0, max_va
 st.write(f"The bank asset value entered is {bank_assets}")
 
 
+#Create a DataFrame for user inputs
+user_data = pd.DataFrame({
+  "No_of_dependents": [no_of_dependents],
+  "Education":[education],
+  "Self_Employed": [self_employed],
+  "Annual_income" : [income_annum],
+  "Loan_amount" : [loan_amount],
+  "Loan_Duration" : [loan_term],
+  "Credit_Score" : [cibil_score],
+  "Residential_Assets" : [residential_assets_value],
+  "Commercial_Assets" : [commercial_assets_value],
+  "Luxury_Asset" : [luxury_assets_value],
+  "Bank_Assets" : [bank_asset_value]
+})
+
+#Need to convert the categorica variables for self_employment and education to numerical values so that the model is able to comupute them
+#Categorical features
+Cat_features = ["Self_Employed", "Education"]
+#use this to converts categorical variables into a series of binary
+user_data = pd.get_dummies(user_data, columns=Cat_features)
+user_data = user_data.astype(np.float32)
+
+#Add the pre-trained model into the APP
+prediction = model.predict(user_data)
+Loan_Application_Status = prediction [0][0]
+
+#Add what client will see on the APP screen
+if prediction > 1 :
+      st.success("Congratulations you are eligible for a loan")
+  else :
+      st.error("Sorry you are not eligible at this moment")
+
+
+
+  
+  
 
