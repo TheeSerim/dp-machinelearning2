@@ -1,16 +1,11 @@
 import streamlit as st
-import pickle
-import requests
+import joblib
+import numpy as np
+import pandas as pd
 
-url = 'https://github.com/TheeSerim/dp-machinelearning2/blob/master/model_loan2.pkl'
-response = requests.get(url)
-response.raise_for_status()  # Check that the request was successful
 
 # Load the pickle data from the downloaded content
-model = pickle.loads(response.content)
-
-#model = pickle.load(open('./TheeSerim/dp-machinelearning2/blob/master/model_loan2.pkl', 'rb'))
-#https://github.com/TheeSerim/dp-machinelearning2/blob/master/model_loan2.pkl
+#model= joblib.load('model_loan2.joblip')
 
 
 st.title('🎈 Loan Application App')
