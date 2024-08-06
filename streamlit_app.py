@@ -2,8 +2,6 @@ import streamlit as st
 import pickle
 import requests
 
-#https://github.com/TheeSerim/dp-machinelearning2/blob/master/model_loan2.pkl
-
 url = 'https://github.com/TheeSerim/dp-machinelearning2/blob/master/model_loan2.pkl'
 response = requests.get(url)
 response.raise_for_status()  # Check that the request was successful
