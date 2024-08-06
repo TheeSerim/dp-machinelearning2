@@ -96,18 +96,18 @@ columns = columns.astype(np.float32)
 
 
 
-def predict():
-    col= np.array(['no_of_dep','edu_options','emp_options','annual_income','Loan_Amount','loan_term','Credit_score',
-          'res_assets','com_assets','lux_assets','bank_assets'])
-    data= pd.DataFrame([col],columns=columns)
+#def predict():
+    #col= np.array(['no_of_dep','edu_options','emp_options','annual_income','Loan_Amount','loan_term','Credit_score',
+          #'res_assets','com_assets','lux_assets','bank_assets'])
+   # data= pd.DataFrame([col],columns=columns)
           
-prediction= model.predict(columns)[0]
+#prediction= model.predict(columns)[0]
 
 #Add what client will see on the APP screen
-if prediction == 1 :
-      st.success("Congratulations you are eligible for a loan")
-else :
-      st.error("Sorry you are not eligible at this moment")
+#if prediction == 1 :
+    #  st.success("Congratulations you are eligible for a loan")
+#else :
+      #st.error("Sorry you are not eligible at this moment")
 
 
 #Add the pre-trained model into the APP
@@ -117,7 +117,7 @@ else :
 
 
 
-st.button('Predict',on_click=predict)
+#st.button('Predict',on_click=predict)
   
   
 
