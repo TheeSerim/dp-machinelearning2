@@ -35,7 +35,12 @@ annual_income = st.number_input("Enter your annual income", min_value=0, max_val
 st.write(f"Your annual income entered is {annual_income}")
 
 # Number input for applicant's loan term
-loan_term = st.number_input("Enter your loan term", min_value=2, max_value=20, value=2)
+#loan_term = st.number_input("Enter your loan term", min_value=2, max_value=20, value=2)
+#st.write(f"The duration of your loan entered is {loan_term}")
+
+# Selectbox for loan term
+loan_term_options = list(range(2, 21, 2))
+loan_term = st.selectbox("Enter your loan term", loan_term_options, index=0)
 st.write(f"The duration of your loan entered is {loan_term}")
 
 # Number input for applicant's number of dependents
