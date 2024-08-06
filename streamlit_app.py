@@ -91,8 +91,8 @@ columns= ['no_of_dep','edu_options','emp_options','annual_income','Loan_Amount',
 
 Cat_features = ["Self_Employed", "Education"]
 #use this to converts categorical variables into a series of binary
-user_data = pd.get_dummies(user_data, columns=Cat_features)
-user_data = user_data.astype(np.float32)
+columns = pd.get_dummies(columns, columns=Cat_features)
+columns = user_data.astype(np.float32)
 
 
 
