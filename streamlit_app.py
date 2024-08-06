@@ -1,12 +1,11 @@
 import streamlit as st
 import joblib
 import numpy as np
-import lightgbm as lgb
 import pandas as pd
 
 
 # Load the pickle data from the downloaded content
-model= joblib.load('model_loan1.joblib')
+#model= pickle.load(open('/LGBM_tuned', 'rb'))
 
 
 st.title('🎈 Loan Application App')
