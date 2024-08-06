@@ -5,7 +5,7 @@ import pandas as pd
 
 
 # Load the pickle data from the downloaded content
-#model= joblib.load('model_loan2.joblip')
+#model= joblib.load('model_loan1.joblip')
 
 
 st.title('🎈 Loan Application App')
@@ -84,6 +84,7 @@ user_data = pd.DataFrame({
 
 #Need to convert the categorica variables for self_employment and education to numerical values so that the model is able to comupute them
 #Categorical features
+
 Cat_features = ["Self_Employed", "Education"]
 #use this to converts categorical variables into a series of binary
 user_data = pd.get_dummies(user_data, columns=Cat_features)
@@ -93,16 +94,16 @@ user_data = user_data.astype(np.float32)
 #Add the pre-trained model into the APP
 prediction = model.predict(user_data)
 Loan_Application_Status = prediction [0][0]
-def main():
+def prediction():
 #Add what client will see on the APP screen
-  if prediction > 1 :
+  if prediction == 1 :
       st.success("Congratulations you are eligible for a loan")
   else :
       st.error("Sorry you are not eligible at this moment")
 
-if __name__ == "__main__":
-  main()
 
+
+st.button('Predict',on_click=predict)
   
   
 
