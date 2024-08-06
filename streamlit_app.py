@@ -8,7 +8,6 @@ import pandas as pd
 model= joblib.load('model_loan1.joblib')
 
 
-
 st.title('🎈 Loan Application App')
 st.info('This App is build to determine if a client will be approved or rejected for loan application')
 
