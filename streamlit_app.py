@@ -4,9 +4,8 @@ import pickle
 model = pickle.load(open('./master/model_loan2.pkl', 'rb'))
 #https://github.com/TheeSerim/dp-machinelearning2/blob/master/model_loan2.pkl
 
-def main():
-st.title('🎈 Loan Application App')
 
+st.title('🎈 Loan Application App')
 st.info('This App is build to determine if a client will be approved or rejected for loan application')
 
 # Text input
@@ -87,10 +86,11 @@ Cat_features = ["Self_Employed", "Education"]
 user_data = pd.get_dummies(user_data, columns=Cat_features)
 user_data = user_data.astype(np.float32)
 
+
 #Add the pre-trained model into the APP
 prediction = model.predict(user_data)
 Loan_Application_Status = prediction [0][0]
-
+def main():
 #Add what client will see on the APP screen
 if prediction > 1 :
       st.success("Congratulations you are eligible for a loan")
