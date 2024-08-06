@@ -100,7 +100,7 @@ def predict():
     col= np.array(['no_of_dep','edu_options','emp_options','annual_income','Loan_Amount','loan_term','Credit_score',
           'res_assets','com_assets','lux_assets','bank_assets'])
     data= pd.DataFrame([col],columns=columns)
-    prediction= model.predict(user_data)[0]
+    prediction= model.predict(columns)[0]
 
 #Add what client will see on the APP screen
 if prediction == 1 :
