@@ -1,6 +1,8 @@
 import streamlit as st
 import pickle
 
+#model = pickle.load(open('./content/model_loan2.pkl', 'rb'))
+
 st.title('🎈 Loan Application App')
 
 st.info('This App is build to determine if a client will be approved or rejected for loan application')
