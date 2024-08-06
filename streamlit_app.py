@@ -4,6 +4,7 @@ import pickle
 model = pickle.load(open('./master/model_loan2.pkl', 'rb'))
 #https://github.com/TheeSerim/dp-machinelearning2/blob/master/model_loan2.pkl
 
+def main():
 st.title('🎈 Loan Application App')
 
 st.info('This App is build to determine if a client will be approved or rejected for loan application')
@@ -96,7 +97,8 @@ if prediction > 1 :
   else :
       st.error("Sorry you are not eligible at this moment")
 
-
+if __name__ == "__main__":
+  main()
 
   
   
