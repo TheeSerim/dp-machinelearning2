@@ -7,6 +7,14 @@ import pandas as pd
 # Load the pickle data from the downloaded content
 model= joblib.load('model_loan1.joblip')
 
+try:
+    model = joblib.load('model_loan1.joblib')
+except FileNotFoundError:
+    print("Model file not found. Please check the file path and name.")
+    # Handle the error appropriately, maybe exit or set a default model
+except Exception as e:
+    print(f"An error occurred while loading the model: {e}")
+    
 
 st.title('🎈 Loan Application App')
 st.info('This App is build to determine if a client will be approved or rejected for loan application')
