@@ -74,6 +74,20 @@ def run_loan():
 
 
 if st.button("Submit"):
+   #Create a DataFrame for user inputs
+   user_data = pd.DataFrame({
+   "no_of_dep": [no_of_dependents],
+   "edu_options":[education],
+   "emp_options": [self_employed],
+   "annual_income" : [income_annum],
+   "Loan_Amount" : [loan_amount],
+   "loan_term" : [loan_term],
+   "Credit_score" : [capped_credit_score],
+   "res_assets" : [residential_assets_value],
+   "com_assets" : [commercial_assets_value],
+   "lux_assets" : [luxury_assets_value],
+   "bank_assets" : [bank_asset_value]
+   })
     user_input = [[no_of_dep,edu_options,emp_options,annual_income,Loan_Amount,loan_term,res_assets,com_assets,lux_assets,bank_assets,Credit_score]]
     print(user_input)
     #Create a data frame for the user inputs
@@ -100,7 +114,7 @@ run_loan()
    #  "annual_income" : [income_annum],
    #  "Loan_Amount" : [loan_amount],
    # "loan_term" : [loan_term],
-   #  "Credit_score" : [cibil_score],
+   #  "Credit_score" : [capped_credit_score],
    #  "res_assets" : [residential_assets_value],
    #  "com_assets" : [commercial_assets_value],
    #  "lux_assets" : [luxury_assets_value],
