@@ -4,6 +4,8 @@ import numpy as np
 import pickle
 import os
 import pandas as pd
+#!pip install lightgbm
+pip install 'lightgbm[pandas]'
 
 
 # Load the pickle data from the downloaded content
