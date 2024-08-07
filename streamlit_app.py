@@ -9,20 +9,6 @@ pickle_in = open("LGBM_tuned", 'rb')
 model = pickle.load(pickle_in)
 
 
-
-def predict_loan(no_of_dep,edu_options,emp_options,annual_income, Loan_Amount,loan_term,Credit_score,
-res_assets,com_assets,lux_assets,bank_assets):
-                     
-
-
-prediction=model.predict([[no_of_dep, edu_options, emp_options, annual_income, Loan_Amount, loan_term, Credit_score,
-                           res_assets, com_assets, lux_assets, bank_assets]])
-print(prediction)
-return prediction
-
-
-
-def main():
           
     st.title('🎈 Loan Application App')
     st.info('This App is build to determine if a client will be approved or rejected for loan application')
@@ -80,17 +66,21 @@ def main():
    st.write(f"The bank asset value entered is {bank_assets}")
 
 
-   result = "
-   if st.button("Predict"):
-       result=predict_loan(no_of_dep,edu_options,emp_options,annual_income, Loan_Amount,loan_term,Credit_score,
-                           res_assets,com_assets,lux_assets,bank_assets)
-  
-   st.success("Congratulations you are eligible for a loan")
-   
-   if st.error("Sorry you are not eligible at this moment")
+columns= ['no_of_dependents','education','self_employed','income_annum','loan_amount', 'cibil_score',
+             'residential_assets_value','commercial_assets_value','luxury_assets_value','bank_asset_value']
 
-   if __name__'__main__':
+def predict():
+    col= np.array([no_of_dep,edu_options,emp_options,annual_income,Loan_Amount,loan_term,Credit_score,
+                   res_assets,com_assets,lux_assets,bank_assets])
+   data= pd.DataFrame([col],columns=columns)
+   predict=model.predict(data)[0]
 
+   if predict == 1:
+      st.success("Congratulations you are eligible for a loan")
+   else:
+       st.error("Sorry you are not eligible at this moment")
+
+  st.button('predict',on_click=predict)
    
 
    #Create a DataFrame for user inputs
