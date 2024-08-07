@@ -10,7 +10,6 @@ model = pickle.load(pickle_in)
 
 
 
-
 def predict_loan(no_of_dep,edu_options,emp_options,annual_income, Loan_Amount,loan_term,Credit_score,
                  res_assets,com_assets,lux_assets,bank_assets):
                      
