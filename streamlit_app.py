@@ -18,12 +18,12 @@ st.info('This App is build to determine if a client will be approved or rejected
 
  # Text input
 user_input = {
-st.text_input("Enter your name")
-st.write(f"Hello, {user_input}!")
+st.text_input("Enter your name"),
+st.write(f"Hello, {user_input}!"),
 
     # Number input for Loan_amount
-Loan_Amount = st.number_input("Enter a Loan_amount", min_value=0, max_value=10000000, value=0)
-st.write(f"The loan amount you would like to apply for is {Loan_Amount}")
+Loan_Amount = st.number_input("Enter a Loan_amount", min_value=0, max_value=10000000, value=0),
+st.write(f"The loan amount you would like to apply for is {Loan_Amount}"),
 
    # Select box for education
 edu_options = ["Education = Yes", "Education = No"]
