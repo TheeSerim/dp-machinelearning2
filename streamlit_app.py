@@ -27,7 +27,7 @@ st.write(f"The loan amount you would like to apply for is {Loan_Amount}"),
 
    # Select box for education
 edu_options := ["Education = Yes", "Education = No"],
-selected_option = st.selectbox("Choose an option", edu_options),
+selected_option := st.selectbox("Choose an option", edu_options),
 st.write(f"Selected: {selected_option}"),
 
    # Select box for self-employment
