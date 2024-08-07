@@ -20,17 +20,17 @@ def run_loan():
 
     # Text input
     # Number input for Loan_amount
-    Loan_Amount := st.number_input("Enter a Loan_amount", min_value=0, max_value=10000000, value=0)
+    Loan_Amount = st.number_input("Enter a Loan_amount", min_value=0, max_value=10000000, value=0)
     st.write(f"The loan amount you would like to apply for is {Loan_Amount}")
 
    # Select box for education
-   edu_options := ["Education = Yes", "Education = No"]
-   selected_option := st.selectbox("Choose an option", edu_options)
+   edu_options = ["Education = Yes", "Education = No"]
+   selected_option = st.selectbox("Choose an option", edu_options)
    st.write(f"Selected: {selected_option}")
 
    # Select box for self-employment
    emp_options := ["self_employ = Yes", "self_employ = No"]
-   selected_option := st.selectbox("Choose an option", emp_options)
+   selected_option = st.selectbox("Choose an option", emp_options)
    st.write(f"Selected: {selected_option}")
 
    # Number input for Credit Score (Cibil_score)
