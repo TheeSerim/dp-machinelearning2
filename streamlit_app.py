@@ -31,7 +31,7 @@ selected_option := st.selectbox("Choose an option", edu_options),
 st.write(f"Selected: {selected_option}"),
 
    # Select box for self-employment
-emp_options = ["self_employ = Yes", "self_employ = No"],
+emp_options := ["self_employ = Yes", "self_employ = No"],
 selected_option = st.selectbox("Choose an option", emp_options),
 st.write(f"Selected: {selected_option}"),
 
