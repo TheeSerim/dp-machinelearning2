@@ -26,7 +26,7 @@ Loan_Amount := st.number_input("Enter a Loan_amount", min_value=0, max_value=100
 st.write(f"The loan amount you would like to apply for is {Loan_Amount}"),
 
    # Select box for education
-edu_options = ["Education = Yes", "Education = No"],
+edu_options := ["Education = Yes", "Education = No"],
 selected_option = st.selectbox("Choose an option", edu_options),
 st.write(f"Selected: {selected_option}"),
 
