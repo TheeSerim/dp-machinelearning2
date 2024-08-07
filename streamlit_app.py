@@ -23,49 +23,49 @@ def run_loan():
     Loan_Amount = st.number_input("Enter a Loan_amount", min_value=0, max_value=10000000, value=0)
     st.write(f"The loan amount you would like to apply for is {Loan_Amount}")
 
-   # Select box for education
-   edu_options = ["Education = Yes", "Education = No"]
-   selected_option = st.selectbox("Choose an option", edu_options)
-   st.write(f"Selected: {selected_option}")
+    #Select box for education
+    edu_options = ["Education = Yes", "Education = No"]
+    selected_option = st.selectbox("Choose an option", edu_options)
+    st.write(f"Selected: {selected_option}")
 
-   # Select box for self-employment
-   emp_options := ["self_employ = Yes", "self_employ = No"]
-   selected_option = st.selectbox("Choose an option", emp_options)
-   st.write(f"Selected: {selected_option}")
+    #Select box for self-employment
+    emp_options := ["self_employ = Yes", "self_employ = No"]
+    selected_option = st.selectbox("Choose an option", emp_options)
+    st.write(f"Selected: {selected_option}")
 
-   # Number input for Credit Score (Cibil_score)
-   Credit_score = st.number_input("Enter your Credit score", min_value=300, max_value=850, value=300)
-   st.write(f"Your credit score entered is {Credit_score}")
+    #Number input for Credit Score (Cibil_score)
+    Credit_score = st.number_input("Enter your Credit score", min_value=300, max_value=850, value=300)
+    st.write(f"Your credit score entered is {Credit_score}")
 
-   # Number input for applicant's annual income
-   annual_income = st.number_input("Enter your annual income", min_value=0, max_value=10000000, value=0)
-   st.write(f"Your annual income entered is {annual_income}")
+    #Number input for applicant's annual income
+    annual_income = st.number_input("Enter your annual income", min_value=0, max_value=10000000, value=0)
+    st.write(f"Your annual income entered is {annual_income}")
 
 
-   # Selectbox for loan term
-   loan_term_options = list(range(2, 21, 2))
-   loan_term = st.selectbox("Enter your loan term", loan_term_options, index=0)
-   st.write(f"The duration of your loan entered is {loan_term}")
+    #Selectbox for loan term
+    loan_term_options = list(range(2, 21, 2))
+    loan_term = st.selectbox("Enter your loan term", loan_term_options, index=0)
+    st.write(f"The duration of your loan entered is {loan_term}")
 
-   # Number input for applicant's number of dependents
-   no_of_dep = st.number_input("Enter your number of dependents", min_value=0, max_value=5, value=0)
-   st.write(f"The number of dependents entered is {no_of_dep}")
+    #Number input for applicant's number of dependents
+    no_of_dep = st.number_input("Enter your number of dependents", min_value=0, max_value=5, value=0)
+    st.write(f"The number of dependents entered is {no_of_dep}")
 
-   # Number input for applicant's Residential asset values
-   res_assets = st.number_input("Enter your residential asset value", min_value=0, max_value=50000000, value=0)
-   st.write(f"The residential asset value entered is {res_assets}")
+    #Number input for applicant's Residential asset values
+    res_assets = st.number_input("Enter your residential asset value", min_value=0, max_value=50000000, value=0)
+    st.write(f"The residential asset value entered is {res_assets}")
 
-   # Number input for applicant's commercial asset values
-   com_assets = st.number_input("Enter your commercial asset value", min_value=0, max_value=40000000, value=0)
-   st.write(f"The commercial asset value entered is {com_assets}")
+    #Number input for applicant's commercial asset values
+    com_assets = st.number_input("Enter your commercial asset value", min_value=0, max_value=40000000, value=0)
+    st.write(f"The commercial asset value entered is {com_assets}")
 
-   # Number input for applicant's luxury asset values
-   lux_assets = st.number_input("Enter your luxury asset value", min_value=0, max_value=50000000, value=0)
-   st.write(f"The luxury asset value entered is {lux_assets}")
+    #Number input for applicant's luxury asset values
+    lux_assets = st.number_input("Enter your luxury asset value", min_value=0, max_value=50000000, value=0)
+    st.write(f"The luxury asset value entered is {lux_assets}")
 
-   # Number input for applicant's bank asset values
-   bank_assets = st.number_input("Enter your bank asset value", min_value=0, max_value=50000000, value=0)
-   st.write(f"The bank asset value entered is {bank_assets}")
+    #Number input for applicant's bank asset values
+    bank_assets = st.number_input("Enter your bank asset value", min_value=0, max_value=50000000, value=0)
+    st.write(f"The bank asset value entered is {bank_assets}")
 
 if st.button("Submit"):
 
