@@ -69,11 +69,11 @@ bank_assets = st.number_input("Enter your bank asset value", min_value=0, max_va
 st.write(f"The bank asset value entered is {bank_assets}")
 
 
-columns= ['no_of_dependents','education','self_employed','income_annum','loan_amount', 'cibil_score',
+columns= ['no_of_dependents','education','self_employed','income_annum','loan_amount', 'capped_credit_score',
              'residential_assets_value','commercial_assets_value','luxury_assets_value','bank_asset_value']
 
 def predict():
-    col= np.array([no_of_dep,edu_options,emp_options,annual_income,Loan_Amount,loan_term,Credit_score,
+    col = np.array([no_of_dep,edu_options,emp_options,annual_income,Loan_Amount,loan_term,Credit_score,
                    res_assets,com_assets,lux_assets,bank_assets])
 data= pd.DataFrame([col],columns=columns)
 predict=model.predict(data)[0]
