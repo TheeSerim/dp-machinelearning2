@@ -103,7 +103,7 @@ st.button('predict',on_click=predict)
   #Need to convert the categorica variables for self_employment and education to numerical values so that the model is able to comupute them
   #Categorical features
 
-  Cat_features = ["Self_Employed", "Education"]
+  #Cat_features = ["Self_Employed", "Education"]
   #use this to converts categorical variables into a series of binary
   #columns = pd.get_dummies(columns, columns=Cat_features)
   #columns = columns.astype(np.float32)
