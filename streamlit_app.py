@@ -72,8 +72,8 @@ columns= ['no_of_dependents','education','self_employed','income_annum','loan_am
 def predict():
     col= np.array([no_of_dep,edu_options,emp_options,annual_income,Loan_Amount,loan_term,Credit_score,
                    res_assets,com_assets,lux_assets,bank_assets])
-   data= pd.DataFrame([col],columns=columns)
-   predict=model.predict(data)[0]
+data= pd.DataFrame([col],columns=columns)
+predict=model.predict(data)[0]
 
    if predict == 1:
       st.success("Congratulations you are eligible for a loan")
