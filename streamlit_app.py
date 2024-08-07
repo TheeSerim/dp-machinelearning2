@@ -68,20 +68,20 @@ def run_loan():
     st.write(f"The bank asset value entered is {bank_assets}")
 
 
-
+if st.button("Submit"):
     user_input = [[no_of_dep,edu_options,emp_options,annual_income,Loan_Amount,loan_term,res_assets,com_assets,lux_assets,bank_assets,Credit_score]]
     print(user_input)
     #Create a data frame for the user inputs
     user_input_df = pd.DataFrame(user_input)
 
     prediction = model.predict(user_input_df.values)
-    #lc = [str(i) for i in prediction]
-    #ans = int("".join(lc))
-if prediction == 0:
+    lc = [str(i) for i in prediction]
+    ans = int("".join(lc))
+if  ans == 0:
     st.error("Sorry, you are not eligible for a loan at this moment")
 else:
     st.success("Congratulations you are eligible for a loan")
-if st.button("Submit"):
+
    run_loan()
  
 
