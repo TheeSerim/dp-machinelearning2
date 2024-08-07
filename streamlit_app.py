@@ -2,11 +2,13 @@ import streamlit as st
 import joblib
 import numpy as np
 import pickle
+import os
 import pandas as pd
 
 
 # Load the pickle data from the downloaded content
-pickle_in = open("LGBM_tuned", 'rb')
+model_path = "LGBM_tuned"
+pickle_in = open("model_path", 'rb')
 model = pickle.load(pickle_in)
 
 
