@@ -82,7 +82,7 @@ if ans == 0:
 else:
     st.success("Congratulations you are eligible for a loan")
 if st.button("Submit"):
-run_loan()
+   run_loan()
  
 
 
