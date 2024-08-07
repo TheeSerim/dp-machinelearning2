@@ -9,8 +9,8 @@ pip install 'lightgbm[pandas]'
 
 
 # Load the pickle data from the downloaded content
-#pickle_in = open("LGBM_tuned-2", 'rb')
-#model = pickle.load(pickle_in)
+pickle_in = open("LGBM_tuned-2", 'rb')
+model = pickle.load(pickle_in)
 
 
           
