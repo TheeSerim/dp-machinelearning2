@@ -88,10 +88,10 @@ if st.button("Submit"):
    "lux_assets" : [luxury_assets_value],
    "bank_assets" : [bank_asset_value]
    })
-    user_input = [[no_of_dep,edu_options,emp_options,annual_income,Loan_Amount,loan_term,res_assets,com_assets,lux_assets,bank_assets,Credit_score]]
-    print(user_input)
-    #Create a data frame for the user inputs
-    user_input_df = pd.DataFrame(user_input)
+   user_input = [[no_of_dep,edu_options,emp_options,annual_income,Loan_Amount,loan_term,res_assets,com_assets,lux_assets,bank_assets,Credit_score]]
+   print(user_input)
+   #Create a data frame for the user inputs
+   user_input_df = pd.DataFrame(user_input)
 
     prediction = model.predict(user_input_df.values)
     lc = [str(i) for i in prediction]
