@@ -24,9 +24,14 @@ def run_loan():
     st.write(f"The loan amount you would like to apply for is {Loan_Amount}")
 
     #Select box for education
-    edu_options = ["Education = Yes", "Education = No"]
-    selected_option = st.selectbox("Choose an option", edu_options)
-    st.write(f"Selected: {selected_option}")
+    #edu_options = ["Education = Yes", "Education = No"]
+    #selected_option = st.selectbox("Choose an option", edu_options)
+    #st.write(f"Selected: {selected_option}")
+
+    # Select box for education
+    edu_options = ["Yes", "No"]
+    education = st.selectbox("Education", edu_options)
+    st.write(f"Selected: {education}")
 
     #Select box for self-employment
     emp_options = ["self_employ = Yes", "self_employ = No"]
@@ -77,10 +82,12 @@ if st.button("Submit"):
     prediction = model.predict(user_input_df.values)
     lc = [str(i) for i in prediction]
     ans = int("".join(lc))
-if  ans == 0:
-    st.error("Sorry, you are not eligible for a loan at this moment")
-else:
-    st.success("Congratulations you are eligible for a loan")
+    if  ans == 0:
+        st.error("Sorry, you are not eligible for a loan at this moment")
+    else:
+        st.success("Congratulations you are eligible for a loan")
+    
+    
 run_loan()
  
 
