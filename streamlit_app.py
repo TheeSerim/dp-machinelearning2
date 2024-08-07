@@ -67,7 +67,7 @@ def run_loan():
     bank_assets = st.number_input("Enter your bank asset value", min_value=0, max_value=50000000, value=0)
     st.write(f"The bank asset value entered is {bank_assets}")
 
-if st.button("Submit"):
+
 
    user_input = [[no_of_dep,edu_options,emp_options,annual_income,Loan_Amount,loan_term,
           res_assets,com_assets,lux_assets,bank_assets,Credit_score]]
@@ -82,7 +82,7 @@ if ans == 0:
    st.error("Sorry, you are not eligible for a loan at this moment")
 else:
    st.success("Congratulations you are eligible for a loan")
-
+if st.button("Submit"):
 run_loan()
  
 
