@@ -26,14 +26,14 @@ Loan_Amount = st.number_input("Enter a Loan_amount", min_value=0, max_value=1000
 st.write(f"The loan amount you would like to apply for is {Loan_Amount}"),
 
    # Select box for education
-edu_options = ["Education = Yes", "Education = No"]
-selected_option = st.selectbox("Choose an option", edu_options)
-st.write(f"Selected: {selected_option}")
+edu_options = ["Education = Yes", "Education = No"],
+selected_option = st.selectbox("Choose an option", edu_options),
+st.write(f"Selected: {selected_option}"),
 
    # Select box for self-employment
-emp_options = ["self_employ = Yes", "self_employ = No"]
-selected_option = st.selectbox("Choose an option", emp_options)
-st.write(f"Selected: {selected_option}")
+emp_options = ["self_employ = Yes", "self_employ = No"],
+selected_option = st.selectbox("Choose an option", emp_options),
+st.write(f"Selected: {selected_option}"),
 
    # Number input for Credit Score (Cibil_score)
 Credit_score = st.number_input("Enter your Credit score", min_value=300, max_value=850, value=300)
