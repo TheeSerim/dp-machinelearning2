@@ -12,14 +12,13 @@ pickle_in = open("LGBM_tuned-2", 'rb')
 model = pickle.load(pickle_in)
 
 
-          
+run_loan = ():          
 st.title(' £ 💰 Loan Application Form £ 💰') 
 st.info('This App is build to determine if a client will be approved or rejected for loan application')
 st.text_input("Enter your name")
 st.write(f"Hello, {user_input}!")
 
  # Text input
-user_input = {
     # Number input for Loan_amount
 Loan_Amount := st.number_input("Enter a Loan_amount", min_value=0, max_value=10000000, value=0)
 st.write(f"The loan amount you would like to apply for is {Loan_Amount}")
@@ -67,22 +66,26 @@ st.write(f"The luxury asset value entered is {lux_assets}")
    # Number input for applicant's bank asset values
 bank_assets = st.number_input("Enter your bank asset value", min_value=0, max_value=50000000, value=0)
 st.write(f"The bank asset value entered is {bank_assets}")
-}
 
+if st.button("Submit"):
+
+user_input = [[no_of_dep,edu_options,emp_options,annual_income,Loan_Amount,loan_term,
+          res_assets,com_assets,lux_assets,bank_assets,Credit_score]]
+print(user_input)
 #Create a data frame for the user inputs
 user_input_df = pd.DataFrame(user_input)
 
-#Perform user prediction based on their individual inputs
-prediction = model.predict(user_input.values)
+prediction = model.predict(user_input_df.values)
+lc = [str(i) for i in prediction]
+ans = int("".join(lc))
+if ans == 0:
+   st.error("Sorry, you are not eligible for a loan at this moment")
+  else:
+     st.success("Congratulations you are eligible for a loan")
 
-#Prediction Output
-if predict == 1:
-   st.success("Congratulations you are eligible for a loan")
-else:
-    st.error("Sorry you are not eligible at this moment")
+run()
+ 
 
-st.button('predict',on_click=predict)
-   
 
    #Create a DataFrame for user inputs
    #user_data = pd.DataFrame({
