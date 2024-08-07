@@ -80,8 +80,8 @@ if st.button("Submit"):
    ans = int("".join(lc))
 if ans == 0:
    st.error("Sorry, you are not eligible for a loan at this moment")
-  else:
-     st.success("Congratulations you are eligible for a loan")
+else:
+   st.success("Congratulations you are eligible for a loan")
 
 run_loan()
  
