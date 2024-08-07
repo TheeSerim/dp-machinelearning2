@@ -7,8 +7,7 @@ import pandas as pd
 
 
 # Load the pickle data from the downloaded content
-model_path = "LGBM_tuned"
-pickle_in = open("model_path", 'rb')
+pickle_in = open("LGBM_tuned", 'rb')
 model = pickle.load(pickle_in)
 
 
