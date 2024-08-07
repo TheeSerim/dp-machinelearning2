@@ -17,7 +17,8 @@ st.title(' £ 💰 Loan Application Form £ 💰')
 st.info('This App is build to determine if a client will be approved or rejected for loan application')
 
  # Text input
-user_input = st.text_input("Enter your name")
+user_input = {
+st.text_input("Enter your name")
 st.write(f"Hello, {user_input}!")
 
     # Number input for Loan_amount
@@ -67,17 +68,15 @@ st.write(f"The luxury asset value entered is {lux_assets}")
    # Number input for applicant's bank asset values
 bank_assets = st.number_input("Enter your bank asset value", min_value=0, max_value=50000000, value=0)
 st.write(f"The bank asset value entered is {bank_assets}")
+}
 
+#Create a data frame for the user inputs
+user_input_df = pd.DataFrame(user_input)
 
-columns= ['no_of_dependents','education','self_employed','income_annum','loan_amount', 'capped_credit_score',
-             'residential_assets_value','commercial_assets_value','luxury_assets_value','bank_asset_value']
+#Perform user prediction based on their individual inputs
+prediction = model.predict(user_input.values)
 
-def predict():
-    col = np.array([no_of_dep,edu_options,emp_options,annual_income,Loan_Amount,loan_term,Credit_score,
-                   res_assets,com_assets,lux_assets,bank_assets])
-data= pd.DataFrame([col],columns=columns)
-predict=model.predict(data)[0]
-
+#Prediction Output
 if predict == 1:
    st.success("Congratulations you are eligible for a loan")
 else:
@@ -120,17 +119,9 @@ st.button('predict',on_click=predict)
           
   #prediction= model.predict(columns)[0]
 
-  #Add what client will see on the APP screen
+
  
 
-  #Add the pre-trained model into the APP
-  #prediction = model.predict(user_data)
-  #Loan_Application_Status = prediction [0][0]
-  #def prediction():
-
-
-
-  #st.button('Predict',on_click=predict)
   
   
 
