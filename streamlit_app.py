@@ -49,8 +49,8 @@ def run_loan():
 
     #Selectbox for loan term
     loan_term_options = list(range(2, 21, 2))
-    loan_term = st.selectbox("Enter your loan term", loan_term_options, index=0)
-    st.write(f"The duration of your loan entered is {loan_term}")
+    loan_term = st.selectbox("Enter your loan term in months", loan_term_options, index=0)
+    st.write(f"Your selected loan duration is {loan_term} months")
 
     #Number input for applicant's number of dependents
     no_of_dep = st.number_input("Enter your number of dependents", min_value=0, max_value=5, value=0)
