@@ -75,9 +75,9 @@ def run_loan():
     user_input_df = pd.DataFrame(user_input)
 
     prediction = model.predict(user_input_df.values)
-    lc = [str(i) for i in prediction]
-    ans = int("".join(lc))
-if ans == 0:
+    #lc = [str(i) for i in prediction]
+    #ans = int("".join(lc))
+if prediction == 0:
     st.error("Sorry, you are not eligible for a loan at this moment")
 else:
     st.success("Congratulations you are eligible for a loan")
