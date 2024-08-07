@@ -12,7 +12,7 @@ pickle_in = open("LGBM_tuned-2", 'rb')
 model = pickle.load(pickle_in)
 
 
-run_loan = ():          
+def run_loan():          
 st.title(' £ 💰 Loan Application Form £ 💰') 
 st.info('This App is build to determine if a client will be approved or rejected for loan application')
 st.text_input("Enter your name")
