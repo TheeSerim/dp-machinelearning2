@@ -15,8 +15,8 @@ model = pickle.load(pickle_in)
 def run_loan():          
     st.title(' £ 💰 Loan Application Form £ 💰') 
     st.info('This App is build to determine if a client will be approved or rejected for loan application')
-    st.text_input("Enter your name")
-    st.write(f"Hello, {user_input}!")
+    client_name = st.text_input("Enter your name")
+    st.write(f"Hello, {client_name}!")
 
     # Text input
     # Number input for Loan_amount
