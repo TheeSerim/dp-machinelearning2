@@ -83,7 +83,7 @@ if ans == 0:
   else:
      st.success("Congratulations you are eligible for a loan")
 
-run()
+run_loan()
  
 
 
