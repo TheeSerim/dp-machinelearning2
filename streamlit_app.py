@@ -75,12 +75,12 @@ def predict():
 data= pd.DataFrame([col],columns=columns)
 predict=model.predict(data)[0]
 
-   if predict == 1:
-      st.success("Congratulations you are eligible for a loan")
-   else:
-       st.error("Sorry you are not eligible at this moment")
+if predict == 1:
+   st.success("Congratulations you are eligible for a loan")
+else:
+    st.error("Sorry you are not eligible at this moment")
 
-  st.button('predict',on_click=predict)
+st.button('predict',on_click=predict)
    
 
    #Create a DataFrame for user inputs
