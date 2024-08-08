@@ -84,7 +84,7 @@ if st.button("Submit"):
        st.error("Sorry, you are not eligible for a loan at this moment")
     else:
        st.success("Congratulations you are eligible for a loan")
-run_loan()   
+run_loan()  
 
 
    
