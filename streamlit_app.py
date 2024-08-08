@@ -83,7 +83,8 @@ if st.button("Submit"):
 #def predict():
    col= np.array([no_of_dependents,education,self_employed,income_annum,loan_amount,loan_term,residential_assets_value,commercial_assets_value,luxury_assets_value,bank_asset_value,capped_credit_score])
    data= pd.DataFrame([col],columns=columns)
-   prediction = model.predict(data.values)
+   prediction = model.predict(data)
+   #prediction = model.predict(data.values)
    lc = [str(i) for i in prediction]
    ans = int("".join(lc))
 if  ans == 0:
