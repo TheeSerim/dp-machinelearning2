@@ -10,9 +10,9 @@ import pandas as pd
 # Load the pickle data from the downloaded content
 pickle_in = open("LGBM_tuned-2", 'rb')
 model = pickle.load(pickle_in)
-def predict_loan(no_of_dep,edu_options,emp_options,annual_income,Loan_Amount,loan_term,res_assets,com_assets,lux_assets,bank_assets,Credit_score):
-    input = np.array([[no_of_dep,edu_options,emp_options,annual_income,Loan_Amount,loan_term,res_assets,com_assets,lux_assets,bank_assets,Credit_score]]).astype(np.floats)
-    prediction = model.predict(no_of_dep,edu_options,emp_options,annual_income,Loan_Amount,loan_term,res_assets,com_assets,lux_assets,bank_assets,Credit_score)
+def predict_loan(no_of_dependents,education,self_employed,income_annum,loan_amount,loan_term,residential_assets_value,commercial_assets_value,luxury_assets_value,bank_asset_value,capped_credit_score):
+    input = np.array([[no_of_dependents,education,self_employed,income_annum,loan_amount,loan_term,residential_assets_value,commercial_assets_value,luxury_assets_value,bank_asset_value,capped_credit_score]]).astype(np.floats)
+    prediction = model.predict(no_of_dependents,education,self_employed,income_annum,loan_amount,loan_term,residential_assets_value,commercial_assets_value,luxury_assets_value,bank_asset_value,capped_credit_score)
     return float(prediction)
 
 def run_loan():          
@@ -78,7 +78,7 @@ def run_loan():
 
 
 if st.button("Submit"):
-    output = predict_loan(no_of_dep,edu_options,emp_options,annual_income,Loan_Amount,loan_term,res_assets,com_assets,lux_assets,bank_assets,Credit_score)
+    output = predict_loan(no_of_dependents,education,self_employed,income_annum,loan_amount,loan_term,residential_assets_value,commercial_assets_value,luxury_assets_value,bank_asset_value,capped_credit_score)
     st.success('The loan application outcome is {}'.formate(output))
     if output == 0:
        st.error("Sorry, you are not eligible for a loan at this moment")
