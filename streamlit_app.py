@@ -15,7 +15,7 @@ def predict_loan(no_of_dependents,education,self_employed,income_annum,loan_amou
     prediction = model.predict(no_of_dependents,education,self_employed,income_annum,loan_amount,loan_term,residential_assets_value,commercial_assets_value,luxury_assets_value,bank_asset_value,capped_credit_score)
     return float(prediction)
 
-def run_loan()         
+def run_loan():        
     st.title('💰 Loan Application Form 💰') 
     st.info('This App will help you determine if a client will be approved for a loan or rejected with their application')
     client_name = st.text_input("Enter your name")
