@@ -81,16 +81,15 @@ if st.button("Submit"):
    #Create a data frame for the user inputs
    #user_input_df = pd.DataFrame(user_input)
 #def predict():
-    col= np.array([no_of_dependents,education,self_employed,income_annum,loan_amount,
-                   loan_term,residential_assets_value,commercial_assets_value,luxury_assets_value,bank_asset_value,capped_credit_score])
-    data= pd.DataFrame([col],columns=columns)
-    prediction = model.predict(data.values)
-    lc = [str(i) for i in prediction]
-    ans = int("".join(lc))
-    if  ans == 0:
-        st.error("Sorry, you are not eligible for a loan at this moment")
-    else:
-        st.success("Congratulations you are eligible for a loan")
+   col= np.array([no_of_dependents,education,self_employed,income_annum,loan_amount,loan_term,residential_assets_value,commercial_assets_value,luxury_assets_value,bank_asset_value,capped_credit_score])
+   data= pd.DataFrame([col],columns=columns)
+   prediction = model.predict(data.values)
+   lc = [str(i) for i in prediction]
+   ans = int("".join(lc))
+if  ans == 0:
+    st.error("Sorry, you are not eligible for a loan at this moment")
+else:
+    st.success("Congratulations you are eligible for a loan")
     
     
 run_loan()
