@@ -75,24 +75,18 @@ def run_loan():
 
 
 if st.button("Submit"):
-   #columns = ['no_of_dependents','education','self_employed','income_annum','loan_amount','loan_term','residential_assets_value','commercial_assets_value','luxury_assets_value','bank_asset_value','capped_credit_score']
+    user_input = [[no_of_dep,edu_options,emp_options,annual_income,Loan_Amount,loan_term,res_assets,com_assets,lux_assets,bank_assets,Credit_score]]
+    print(user_input)
+    #Create a data frame for the user inputs
+    user_input_df = pd.DataFrame(user_input)
 
-   
-   #Create a data frame for the user inputs
-   user_input_df = pd.DataFrame(user_input)
-#def predict():
-   #col= np.array([no_of_dependents,education,self_employed,income_annum,loan_amount,loan_term,residential_assets_value,commercial_assets_value,luxury_assets_value,bank_asset_value,capped_credit_score])
-   #data= pd.DataFrame([col],columns=columns)
-   #prediction = model.predict(data)
-   prediction = model.predict(data.values)
-   lc = [str(i) for i in prediction]
-   ans = int("".join(lc))
+    prediction = model.predict(user_input_df.values)
+    lc = [str(i) for i in prediction]
+    ans = int("".join(lc))
 if  ans == 0:
     st.error("Sorry, you are not eligible for a loan at this moment")
 else:
     st.success("Congratulations you are eligible for a loan")
-    
-    
 run_loan()
  
 
@@ -115,6 +109,7 @@ run_loan()
    #})
 
 
+ #columns = ['no_of_dependents','education','self_employed','income_annum','loan_amount','loan_term','residential_assets_value','commercial_assets_value','luxury_assets_value','bank_asset_value','capped_credit_score']
 
   #Need to convert the categorica variables for self_employment and education to numerical values so that the model is able to comupute them
   #Categorical features
@@ -125,6 +120,9 @@ run_loan()
   #columns = columns.astype(np.float32)
 
 
+#def predict():
+   #col= np.array([no_of_dependents,education,self_employed,income_annum,loan_amount,loan_term,residential_assets_value,commercial_assets_value,luxury_assets_value,bank_asset_value,capped_credit_score])
+   #data= pd.DataFrame([col],columns=columns)
 
   #def predict():
     #col= np.array(['no_of_dep','edu_options','emp_options','annual_income','Loan_Amount','loan_term','Credit_score',
