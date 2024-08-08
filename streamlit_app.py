@@ -11,7 +11,12 @@ pickle_in = open("LGBM_tuned-2", 'rb')
 model = pickle.load(pickle_in)
 
 
-def run_loan():          
+def predict_loan(no_of_dependents,education,self_employed,income_annum,loan_amount,loan_term,residential_assets_value,commercial_assets_value,luxury_assets_value,bank_asset_value,capped_credit_score):
+    input = np.array([[no_of_dependents,education,self_employed,income_annum,loan_amount,loan_term,residential_assets_value,commercial_assets_value,luxury_assets_value,bank_asset_value,capped_credit_score]]).astype(np.floats)
+    prediction = model.predict(no_of_dependents,education,self_employed,income_annum,loan_amount,loan_term,residential_assets_value,commercial_assets_value,luxury_assets_value,bank_asset_value,capped_credit_score)
+    return float(prediction)
+
+def run_loan():        
     st.title('💰 Loan Application Form 💰') 
     st.info('This App will help you determine if a client will be approved for a loan or rejected with their application')
     client_name = st.text_input("Enter your name")
@@ -74,18 +79,14 @@ def run_loan():
 
 
 if st.button("Submit"):
-    user_input = [[no_of_dependents,education,self_employed,income_annum,loan_amount,loan_term,residential_assets_value,commercial_assets_value,luxury_assets_value,bank_asset_value,capped_credit_score]]
-    print(user_input)
-
-    prediction = model.predict(user_input.values)
-    lc = [str(i) for i in prediction]
-    ans = int("".join(lc))
-    if  ans == 0:
-        st.error("Sorry, you are not eligible for a loan at this moment")
+    output = predict_loan(no_of_dependents,education,self_employed,income_annum,loan_amount,loan_term,residential_assets_value,commercial_assets_value,luxury_assets_value,bank_asset_value,capped_credit_score)
+    st.success('The loan application outcome is {}'.formate(output))
+    if output == 0:
+       st.error("Sorry, you are not eligible for a loan at this moment")
     else:
-        st.success("Congratulations you are eligible for a loan")
+       st.success("Congratulations you are eligible for a loan")
 run_loan()
-  
+
 
 
    
