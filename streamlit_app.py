@@ -10,6 +10,8 @@ import pandas as pd
 pickle_in = open("LGBM_tuned-2", 'rb')
 model = pickle.load(pickle_in)
 
+education_numeric = 1 if education == "Yes" else 0
+self_employed_numeric = 1 if self_employed == "Yes" else 0
 user_input = ["no_of_dependents","education","self_employed","income_annum","loan_amount","loan_term","residential_assets_value","commercial_assets_value","luxury_assets_value","bank_asset_value","capped_credit_score"]
  
 
@@ -41,13 +43,13 @@ def run_loan():
     edu_options = ["Yes", "No"]
     education = st.selectbox("Education", edu_options)
     # Map the selected option to a numerical value
-    education_numeric = 1 if education == "Yes" else 0
+    #education_numeric = 1 if education == "Yes" else 0
     st.write(f"Selected: {education}")
 
     #Select box for self-employment
     self_employed = ["self_employ = Yes", "self_employ = No"]
     selected_option = st.selectbox("Choose an option", self_employed)
-    self_employed_numeric = 1 if self_employed == "Yes" else 0
+    #self_employed_numeric = 1 if self_employed == "Yes" else 0
     st.write(f"Selected: {selected_option}")
 
     #Number input for applicant's annual income
