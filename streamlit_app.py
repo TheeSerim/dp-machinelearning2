@@ -30,7 +30,7 @@ def run_loan():
     #Number input for applicant's number of dependents
     no_of_dependents = st.number_input("Enter your number of dependents", min_value=0, max_value=5, value=0)
     st.write(f"The number of dependents entered is {no_of_dependents}")
-    st.write(f"Type of no_of_dependents: {type(no_of_dependents)}")
+    #st.write(f"Type of no_of_dependents: {type(no_of_dependents)}")
     
     #Select box for education
     #edu_options = ["Education = Yes", "Education = No"]
