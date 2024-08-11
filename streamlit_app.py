@@ -10,7 +10,7 @@ import pandas as pd
 pickle_in = open("LGBM_tuned-2", 'rb')
 model = pickle.load(pickle_in)
 
-user_input = ["no_of_dependents","education","self_employed","income_annum","loan_amount","loan_term","residential_assets_value","commercial_assets_value","luxury_assets_value","bank_asset_value","capped_credit_score"]
+input = ["no_of_dependents","education","self_employed","income_annum","loan_amount","loan_term","residential_assets_value","commercial_assets_value","luxury_assets_value","bank_asset_value","capped_credit_score"]
  
 
 def predict_loan(no_of_dependents,education,self_employed,income_annum,loan_amount,loan_term,residential_assets_value,commercial_assets_value,luxury_assets_value,bank_asset_value,capped_credit_score):
@@ -76,7 +76,7 @@ def run_loan():
     st.write(f"The bank asset value entered is {bank_asset_value}")
 
     #Number input for Credit Score (Cibil_score)
-    capped_credit_score = st.number_input("Enter your Credit score", min_value=300, max_value=850, value=300)
+    capped_credit_score = st.number_input("Enter your credit score", min_value=300, max_value=850, value=300)
     st.write(f"Your credit score entered is {capped_credit_score}")
 
 
