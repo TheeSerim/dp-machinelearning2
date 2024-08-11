@@ -34,7 +34,7 @@ def run_loan():
     #st.write(f"Type of no_of_dependents: {type(no_of_dependents)}")
     
     #Select box for education
-    edu_options = ["Education = Yes", "Education = No"]
+    edu_options = ["education = Yes", "education = No"]
     selected_option = st.selectbox("Choose an option", edu_options)
     education_numeric = 1 if education == "Yes" else 0
     st.write(f"Selected: {selected_option}")
