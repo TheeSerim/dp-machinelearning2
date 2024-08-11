@@ -12,10 +12,14 @@ model = pickle.load(pickle_in)
 
 
 user_input = ["no_of_dependents","education","self_employed","income_annum","loan_amount","loan_term","residential_assets_value","commercial_assets_value","luxury_assets_value","bank_asset_value","capped_credit_score"]
- 
+Cat_features = ["education", "self_employed"]
+#use this to converts categorical variables into a series of binary
+columns = pd.get_dummies(columns, columns=Cat_features)
+columns = columns.astype(np.float64)
 
 def predict_loan(no_of_dependents,education,self_employed,income_annum,loan_amount,loan_term,residential_assets_value,commercial_assets_value,luxury_assets_value,bank_asset_value,capped_credit_score):
     input = np.array([[no_of_dependents,education,self_employed,income_annum,loan_amount,loan_term,residential_assets_value,commercial_assets_value,luxury_assets_value,bank_asset_value,capped_credit_score]]).astype(np.float64)
+    data= pd.DataFrame([col],columns=columns)
     prediction = model.predict(input)
     return float(prediction)
 
@@ -85,6 +89,7 @@ def run_loan():
     st.write(f"Your credit score entered is {capped_credit_score}")
 
 
+   
 if st.button("Submit"):
     output = predict_loan('no_of_dependents','education','self_employed','income_annum','loan_amount','loan_term','residential_assets_value','commercial_assets_value','luxury_assets_value','bank_asset_value','capped_credit_score')
     st.success('The loan application outcome is {}'.formate(output))
