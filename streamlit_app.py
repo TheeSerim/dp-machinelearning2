@@ -13,10 +13,18 @@ model = pickle.load(pickle_in)
 
 user_input = ["no_of_dependents","education","self_employed","income_annum","loan_amount","loan_term","residential_assets_value","commercial_assets_value","luxury_assets_value","bank_asset_value","capped_credit_score"]
 
+education_mapping = {"Yes": 1, "No": 0}
+self_employed_mapping = {"Yes": 1, "No": 0}
+
+user_input[1] = education_mapping[education]  # Convert education to numeric
+user_input[2] = self_employed_mapping[self_employed]  # Convert self_employed to numeric
+
+# Convert the list to a numpy array
+input_array = np.array([user_input]).astype(np.float64)
 
 def predict_loan(no_of_dependents,education,self_employed,income_annum,loan_amount,loan_term,residential_assets_value,commercial_assets_value,luxury_assets_value,bank_asset_value,capped_credit_score):
-    input = np.array([[no_of_dependents,education,self_employed,income_annum,loan_amount,loan_term,residential_assets_value,commercial_assets_value,luxury_assets_value,bank_asset_value,capped_credit_score]]).astype(np.float64)
-    prediction = model.predict(input)
+    #input_array = np.array([[no_of_dependents,education,self_employed,income_annum,loan_amount,loan_term,residential_assets_value,commercial_assets_value,luxury_assets_value,bank_asset_value,capped_credit_score]]).astype(np.float64)
+    prediction = model.predict(input_array)
     return float(prediction)
 
 def run_loan():        
