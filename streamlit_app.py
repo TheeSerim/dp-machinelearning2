@@ -36,7 +36,7 @@ def run_loan():
     #Select box for education
     education = ["education = Yes", "education = No"]
     selected_option = st.selectbox("Choose an option", education)
-    education_numeric = 1 if education == "Yes" else 0
+    #education_numeric = 1 if education == "Yes" else 0
     st.write(f"Selected: {selected_option}")
 
     # Select box for education
@@ -49,7 +49,7 @@ def run_loan():
     #Select box for self-employment
     self_employed = ["self_employ = Yes", "self_employ = No"]
     selected_option = st.selectbox("Choose an option", self_employed)
-    self_employed_numeric = 1 if self_employed == "Yes" else 0
+    #self_employed_numeric = 1 if self_employed == "Yes" else 0
     st.write(f"Selected: {selected_option}")
 
     #Number input for applicant's annual income
