@@ -14,10 +14,9 @@ model = pickle.load(pickle_in)
 user_input = ["no_of_dependents","education","self_employed","income_annum","loan_amount","loan_term","residential_assets_value","commercial_assets_value","luxury_assets_value","bank_asset_value","capped_credit_score"]
 
 
-
 def predict_loan(no_of_dependents,education,self_employed,income_annum,loan_amount,loan_term,residential_assets_value,commercial_assets_value,luxury_assets_value,bank_asset_value,capped_credit_score):
-    input = np.array([[no_of_dependents,education,self_employed,income_annum,loan_amount,loan_term,residential_assets_value,commercial_assets_value,luxury_assets_value,bank_asset_value,capped_credit_score]]).astype(np.float64)
-    prediction = model.predict(input)
+    user_data = np.array([[no_of_dependents,education,self_employed,income_annum,loan_amount,loan_term,residential_assets_value,commercial_assets_value,luxury_assets_value,bank_asset_value,capped_credit_score]]).astype(np.float64)
+    prediction = model.predict(user_data)
     return float(prediction)
 
 def run_loan():        
@@ -86,8 +85,25 @@ def run_loan():
     capped_credit_score = st.number_input("Enter your credit score", min_value=300, max_value=850, value=300)
     st.write(f"Your credit score entered is {capped_credit_score}")
 
-    
-   
+
+    #Create a DataFrame for user inputs
+    user_data = pd.DataFrame({
+    "no_of_dependents": [no_of_dependents],
+    "education":[education],
+    "self_employed": [self_employed],
+    "income_annum" : [income_annum],
+    "loan_amount" : [loan_amount],
+    "loan_term" : [loan_term],
+    "residential_assets_value" : [residential_assets_value],
+    "commercial_assets_value" : [commercial_assets_value],
+    "luxury_assets_value" : [luxury_assets_value],
+    "bank_asset_value" : [bank_asset_value],
+    "capped_credit_score" : [capped_credit_score]
+   })
+    Categorical_columns = ["self_employed", "education"]
+    user_data = pd.get_dummies(user_data, columns=Categorical_columns)
+    user_data = user_data.astype(np.float32)
+
 if st.button("Submit"):
     output = predict_loan('no_of_dependents','education','self_employed','income_annum','loan_amount','loan_term','residential_assets_value','commercial_assets_value','luxury_assets_value','bank_asset_value','capped_credit_score')
     st.success('The loan application outcome is {}'.formate(output))
