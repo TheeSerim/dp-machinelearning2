@@ -100,7 +100,7 @@ def run_loan():
     if st.button("Submit"):
         output = predict_loan(no_of_dependents,education_numeric,self_employed_numeric,income_annum,loan_amount,loan_term,residential_assets_value,commercial_assets_value,luxury_assets_value,bank_asset_value,capped_credit_score)
         st.success('The loan application outcome is {}'.format(output))
-            if output == 0:
+        if output == 0:
            st.error("Sorry, you are not eligible for a loan at this moment")
             else:
                st.success("Congratulations you are eligible for a loan")
