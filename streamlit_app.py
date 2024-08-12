@@ -34,18 +34,30 @@ def run_loan():
     no_of_dependents = st.number_input("Enter your number of dependents", min_value=0, max_value=5, value=0)
     st.write(f"The number of dependents entered is {no_of_dependents}")
     #st.write(f"Type of no_of_dependents: {type(no_of_dependents)}")
+
+    education_options = ["Yes", "No"]
+    education = st.selectbox("Is the applicant educated?", education_options)
+    education_numeric = 1 if education == "Yes" else 0
+    st.write(f"Selected: {education} (Converted to {education_numeric})")
+    
+    # Select box for self-employment
+    self_employed_options = ["Yes", "No"]
+    self_employed = st.selectbox("Is the applicant self-employed?", self_employed_options)
+    self_employed_numeric = 1 if self_employed == "Yes" else 0
+    st.write(f"Selected: {self_employed} (Converted to {self_employed_numeric})")
+    
     
     #Select box for education
-    education = ["education = Yes", "education = No"]
-    selected_option = st.selectbox("Choose an option", education)
+    #education = ["education = Yes", "education = No"]
+    #selected_option = st.selectbox("Choose an option", education)
     #education_numeric = 1 if education == "Yes" else 0
-    st.write(f"Selected: {selected_option}")
+    #st.write(f"Selected: {selected_option}")
 
     #Select box for self-employment
-    self_employed = ["self_employ = Yes", "self_employ = No"]
-    selected_option = st.selectbox("Choose an option", self_employed)
+    #self_employed = ["self_employ = Yes", "self_employ = No"]
+    #selected_option = st.selectbox("Choose an option", self_employed)
     #self_employed_numeric = 1 if self_employed == "Yes" else 0
-    st.write(f"Selected: {selected_option}")
+    #st.write(f"Selected: {selected_option}")
 
     #Number input for applicant's annual income
     income_annum = st.number_input("Enter your annual income", min_value=0, max_value=10000000, value=0)
