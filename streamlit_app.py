@@ -103,7 +103,7 @@ def run_loan():
         if output == 0:
            st.error("Sorry, you are not eligible for a loan at this moment")
         else:
-            st.success("Congratulations you are eligible for a loan")
+            st.success("Congratulations {client_name}, you are eligible for a loan")
 run_loan()
 
 
