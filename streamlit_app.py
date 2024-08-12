@@ -15,9 +15,9 @@ user_input = ["no_of_dependents","education","self_employed","income_annum","loa
 
 
 def predict_loan(no_of_dependents,education,self_employed,income_annum,loan_amount,loan_term,residential_assets_value,commercial_assets_value,luxury_assets_value,bank_asset_value,capped_credit_score):
-    input = np.array([[no_of_dependents,education,self_employed,income_annum,loan_amount,loan_term,residential_assets_value,commercial_assets_value,luxury_assets_value,bank_asset_value,capped_credit_score]]).astype(np.float32)
-    prediction = model.predict(input)
-    return float(prediction)
+    #input = np.array([[no_of_dependents,education,self_employed,income_annum,loan_amount,loan_term,residential_assets_value,commercial_assets_value,luxury_assets_value,bank_asset_value,capped_credit_score]]).astype(np.float32)
+    prediction = model.predict(pred_data)
+    #return float(prediction)
 
 def run_loan():        
     st.title('💰 Loan Application Form 💰') 
@@ -85,8 +85,15 @@ def run_loan():
     capped_credit_score = st.number_input("Enter your credit score", min_value=300, max_value=850, value=300)
     st.write(f"Your credit score entered is {capped_credit_score}")
 
+    education_num = 1 if education == "Yes" else 0
+    self_employed_num = 1 if self_employed == "Yes" else 0
 
+    pred_data = pd.DataFrame([[no_of_dependents,education_num,self_employed_num,income_annum,loan_amount,loan_term,residential_assets_value,commercial_assets_value,luxury_assets_value,bank_asset_value,capped_credit_score]],
+                            columns=['no_of_dependents','education','self_employed','income_annum','loan_amount','loan_term','residential_assets_value','commercial_assets_value','luxury_assets_value',
+                                     'bank_asset_value','capped_credit_score'])
     
+
+    pred_data = scaler.transform(pred_data)
 
 if st.button("Submit"):
     output = predict_loan('no_of_dependents','education','self_employed','income_annum','loan_amount','loan_term','residential_assets_value','commercial_assets_value','luxury_assets_value','bank_asset_value','capped_credit_score')
