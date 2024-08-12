@@ -18,8 +18,8 @@ model = pickle.load(pickle_in)
 
 
 def predict_loan(no_of_dependents,education_numeric,self_employed_numeric,income_annum,loan_amount,loan_term,residential_assets_value,commercial_assets_value,luxury_assets_value,bank_asset_value,capped_credit_score):
-    input = np.array([[no_of_dependents,education_numeric,self_employed_numeric,income_annum,loan_amount,loan_term,residential_assets_value,commercial_assets_value,luxury_assets_value,bank_asset_value,capped_credit_score]]).astype(np.float32)
-    prediction = model.predict(input)
+    input_data = np.array([[no_of_dependents,education_numeric,self_employed_numeric,income_annum,loan_amount,loan_term,residential_assets_value,commercial_assets_value,luxury_assets_value,bank_asset_value,capped_credit_score]]).astype(np.float32)
+    prediction = model.predict(input_data)
     return float(prediction)
 
 def run_loan():        
@@ -97,16 +97,13 @@ def run_loan():
     #self_employed_num = 1 if self_employed == "Yes" else 0
 
    
-if st.button("Submit"):
-    output = predict_loan(no_of_dependents,education_numeric,self_employed_numeric,income_annum,loan_amount,loan_term,residential_assets_value,commercial_assets_value,luxury_assets_value,bank_asset_value,capped_credit_score)
-    st.success('The loan application outcome is {}'.format(output))
-    if output == 0:
-       st.error("Sorry, you are not eligible for a loan at this moment")
-    else:
-       st.success("Congratulations you are eligible for a loan")
-
-
-    
+    if st.button("Submit"):
+        output = predict_loan(no_of_dependents,education_numeric,self_employed_numeric,income_annum,loan_amount,loan_term,residential_assets_value,commercial_assets_value,luxury_assets_value,bank_asset_value,capped_credit_score)
+        st.success('The loan application outcome is {}'.format(output))
+            if output == 0:
+           st.error("Sorry, you are not eligible for a loan at this moment")
+            else:
+               st.success("Congratulations you are eligible for a loan")
 run_loan()
 
 
