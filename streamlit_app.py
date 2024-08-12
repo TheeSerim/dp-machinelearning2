@@ -40,21 +40,12 @@ def run_loan():
     selected_option = st.selectbox("Choose an option", education)
     #education_numeric = 1 if education == "Yes" else 0
     st.write(f"Selected: {selected_option}")
-    education = int(education)
-
-    # Select box for education
-    #edu_options = ["Yes", "No"]
-    #education = st.selectbox("Education", edu_options)
-    # Map the selected option to a numerical value
-    #education_numeric = 1 if education == "Yes" else 0
-    #st.write(f"Selected: {education}")
 
     #Select box for self-employment
     self_employed = ["self_employ = Yes", "self_employ = No"]
     selected_option = st.selectbox("Choose an option", self_employed)
     #self_employed_numeric = 1 if self_employed == "Yes" else 0
     st.write(f"Selected: {selected_option}")
-    self_employed = int(self_employed)
 
     #Number input for applicant's annual income
     income_annum = st.number_input("Enter your annual income", min_value=0, max_value=10000000, value=0)
@@ -136,6 +127,12 @@ run_loan()
    #  "bank_assets" : [bank_asset_value]
    #})
 
+    # Select box for education
+    #edu_options = ["Yes", "No"]
+    #education = st.selectbox("Education", edu_options)
+    # Map the selected option to a numerical value
+    #education_numeric = 1 if education == "Yes" else 0
+    #st.write(f"Selected: {education}")
 
  #columns = ['no_of_dependents','education','self_employed','income_annum','loan_amount','loan_term','residential_assets_value','commercial_assets_value','luxury_assets_value','bank_asset_value','capped_credit_score']
 
