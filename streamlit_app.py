@@ -12,10 +12,6 @@ pickle_in = open("LGBM_tuned-2", 'rb')
 model = pickle.load(pickle_in)
 
 
-#user_input = ["no_of_dependents","education","self_employed","income_annum","loan_amount","loan_term","residential_assets_value","commercial_assets_value","luxury_assets_value","bank_asset_value","capped_credit_score"]
-
-#user_input = ['no_of_dependents','education','self_employed','income_annum','loan_amount','loan_term','residential_assets_value','commercial_assets_value','luxury_assets_value','bank_asset_value','capped_credit_score']
-
 
 def predict_loan(no_of_dependents,education_numeric,self_employed_numeric,income_annum,loan_amount,loan_term,residential_assets_value,commercial_assets_value,luxury_assets_value,bank_asset_value,capped_credit_score):
     input_data = np.array([[no_of_dependents,education_numeric,self_employed_numeric,income_annum,loan_amount,loan_term,residential_assets_value,commercial_assets_value,luxury_assets_value,bank_asset_value,capped_credit_score]]).astype(np.float32)
@@ -119,52 +115,7 @@ run_loan()
 
 
 
-  #user_input = [[no_of_dep,edu_options,emp_options,annual_income,Loan_Amount,loan_term,res_assets,com_assets,lux_assets,bank_assets,Credit_score]]
- 
-
-   #Create a DataFrame for user inputs
-   #user_data = pd.DataFrame({
-   # "no_of_dep": [no_of_dependents],
-   # "edu_options":[education],
-   # "emp_options": [self_employed],
-   #  "annual_income" : [income_annum],
-   #  "Loan_Amount" : [loan_amount],
-   # "loan_term" : [loan_term],
-   #  "Credit_score" : [capped_credit_score],
-   #  "res_assets" : [residential_assets_value],
-   #  "com_assets" : [commercial_assets_value],
-   #  "lux_assets" : [luxury_assets_value],
-   #  "bank_assets" : [bank_asset_value]
-   #})
-
-    # Select box for education
-    #edu_options = ["Yes", "No"]
-    #education = st.selectbox("Education", edu_options)
-    # Map the selected option to a numerical value
-    #education_numeric = 1 if education == "Yes" else 0
-    #st.write(f"Selected: {education}")
-
- #columns = ['no_of_dependents','education','self_employed','income_annum','loan_amount','loan_term','residential_assets_value','commercial_assets_value','luxury_assets_value','bank_asset_value','capped_credit_score']
-
-  #Need to convert the categorica variables for self_employment and education to numerical values so that the model is able to comupute them
-  #Categorical features
-
-  #Cat_features = ["Self_Employed", "Education"]
-  #use this to converts categorical variables into a series of binary
-  #columns = pd.get_dummies(columns, columns=Cat_features)
-  #columns = columns.astype(np.float32)
-
-
-#def predict():
-   #col= np.array([no_of_dependents,education,self_employed,income_annum,loan_amount,loan_term,residential_assets_value,commercial_assets_value,luxury_assets_value,bank_asset_value,capped_credit_score])
-   #data= pd.DataFrame([col],columns=columns)
-
-  #def predict():
-    #col= np.array(['no_of_dep','edu_options','emp_options','annual_income','Loan_Amount','loan_term','Credit_score',
-          #'res_assets','com_assets','lux_assets','bank_assets'])
-   # data= pd.DataFrame([col],columns=columns)
-          
-  #prediction= model.predict(columns)[0]
+  
 
 
  
