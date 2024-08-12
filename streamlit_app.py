@@ -43,18 +43,6 @@ def run_loan():
     self_employed_numeric = 1 if self_employed == "Yes" else 0
     st.write(f"Selected: {self_employed} (Converted to {self_employed_numeric})")
     
-    
-    #Select box for education
-    #education = ["education = Yes", "education = No"]
-    #selected_option = st.selectbox("Choose an option", education)
-    #education_numeric = 1 if education == "Yes" else 0
-    #st.write(f"Selected: {selected_option}")
-
-    #Select box for self-employment
-    #self_employed = ["self_employ = Yes", "self_employ = No"]
-    #selected_option = st.selectbox("Choose an option", self_employed)
-    #self_employed_numeric = 1 if self_employed == "Yes" else 0
-    #st.write(f"Selected: {selected_option}")
 
     #Number input for applicant's annual income
     income_annum = st.number_input("Enter your annual income", min_value=0, max_value=10000000, value=0)
@@ -89,8 +77,6 @@ def run_loan():
     capped_credit_score = st.number_input("Enter your credit score", min_value=300, max_value=850, value=300)
     st.write(f"Your credit score entered is {capped_credit_score}")
 
-    #education_num = 1 if education == "Yes" else 0
-    #self_employed_num = 1 if self_employed == "Yes" else 0
 
    
     if st.button("Submit"):
