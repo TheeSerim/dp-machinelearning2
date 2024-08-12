@@ -15,7 +15,7 @@ user_input = ["no_of_dependents","education","self_employed","income_annum","loa
 
 
 def predict_loan(no_of_dependents,education,self_employed,income_annum,loan_amount,loan_term,residential_assets_value,commercial_assets_value,luxury_assets_value,bank_asset_value,capped_credit_score):
-    user_data = np.array([[no_of_dependents,education,self_employed,income_annum,loan_amount,loan_term,residential_assets_value,commercial_assets_value,luxury_assets_value,bank_asset_value,capped_credit_score]])
+    user_data = np.array([[no_of_dependents,education,self_employed,income_annum,loan_amount,loan_term,residential_assets_value,commercial_assets_value,luxury_assets_value,bank_asset_value,capped_credit_score]]).astype(np.float32)
     prediction = model.predict(user_data)
     return float(prediction)
 
@@ -86,6 +86,9 @@ def run_loan():
     st.write(f"Your credit score entered is {capped_credit_score}")
 
 
+    education_mapping = {"Yes": 1, "No": 0}
+    self_employed_mapping = {"Yes": 1, "No": 0}
+    
     #Create a DataFrame for user inputs
     user_data = pd.DataFrame({
     "no_of_dependents": [no_of_dependents],
@@ -100,6 +103,9 @@ def run_loan():
     "bank_asset_value" : [bank_asset_value],
     "capped_credit_score" : [capped_credit_score]
    })
+    user_data["education"] = user_data["education"].map(education_mapping)
+    user_data["self_employed"] = user_data["self_employed"].map(self_employed_mapping)
+    
     Categorical_columns = ["self_employed", "education"]
     user_data = pd.get_dummies(user_data, columns=Categorical_columns)
     user_data = user_data.astype(np.float32)
