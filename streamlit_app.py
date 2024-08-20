@@ -5,16 +5,12 @@ import numpy as np
 import pickle
 import os
 import pandas as pd
+from streamlit_gsheets import GSheetsConnection
 
 
 # Load the pickle data from the downloaded content
 pickle_in = open("LGBM_tuned-2", 'rb')
 model = pickle.load(pickle_in)
-
-# streamlit_app.py
-
-import streamlit as st
-from streamlit_gsheets import GSheetsConnection
 
 # Create a connection object.
 conn = st.connection("gsheets", type=GSheetsConnection)
