@@ -11,6 +11,20 @@ import pandas as pd
 pickle_in = open("LGBM_tuned-2", 'rb')
 model = pickle.load(pickle_in)
 
+# streamlit_app.py
+
+import streamlit as st
+from streamlit_gsheets import GSheetsConnection
+
+# Create a connection object.
+conn = st.connection("gsheets", type=GSheetsConnection)
+
+df = conn.read()
+
+# Print results.
+for row in df.itertuples():
+    st.write(f"{row.name} has a :{row.pet}:")
+
 
 
 def predict_loan(no_of_dependents,education_numeric,self_employed_numeric,income_annum,loan_amount,loan_term,residential_assets_value,commercial_assets_value,luxury_assets_value,bank_asset_value,capped_credit_score):
