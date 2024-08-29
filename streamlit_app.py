@@ -43,7 +43,7 @@ def run_loan():
     self_employed_options = ["Yes", "No"]
     self_employed = st.selectbox("Is the applicant self-employed?", self_employed_options)
     self_employed_numeric = 1 if self_employed == "Yes" else 0
-    st.write(f"Selected: {self_employed} (Converted to {self_employed_numeric})")
+    st.write(f"Selected: {self_employed}")
     
 
     #Number input for applicant's annual income
