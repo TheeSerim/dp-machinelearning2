@@ -22,7 +22,7 @@ def predict_loan(no_of_dependents,education_numeric,self_employed_numeric,income
 
 def run_loan():        
     st.title('💰 Loan Application Form 💰') 
-    st.info('This App will help you determine if a client will be approved for a loan or rejected with their application')
+    st.info('This App will help you determine if you will be approved or rejected for a personal loan')
     client_name = st.text_input("Enter your name")
     st.write(f"Hello, {client_name}!")
 
