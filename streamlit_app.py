@@ -9,7 +9,7 @@ from streamlit_gsheets import GSheetsConnection
 
 
 # Load the pickle data from the downloaded content
-pickle_in = open("LGBM_default.pkl", 'rb')
+pickle_in = open("LGBM.pkl", 'rb')
 model = pickle.load(pickle_in)
 
 
